@@ -4,6 +4,9 @@ FROM quay.io/fedora/fedora-silverblue:42
 RUN printf '[install.filesystem.root]\ntype = "xfs"\n' \
     > /usr/lib/bootc/install/00-rootfs.toml
 
-RUN dnf5 install -y fastfetch && dnf5 clean all
+# Copia e executa o script de build
+COPY build_files/build.sh /tmp/build.sh
+RUN /tmp/build.sh && rm /tmp/build.sh
 
+# Verifica a imagem
 RUN bootc container lint

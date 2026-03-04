@@ -19,7 +19,7 @@ gpgkey=https://repository.mullvad.net/rpm/mullvad-keyring.asc
 EOF
 
 # Install system packages
-dnf5 install -y mullvad-vpn fastfetch tmux btop python3-pip python3-i3ipc
+dnf5 install -y mullvad-vpn mullvad-browser fastfetch tmux btop python3-pip python3-i3ipc
 
 # Install autotiling via pip (since COPR doesn't have F43 yet)
 pip install --prefix=/usr autotiling

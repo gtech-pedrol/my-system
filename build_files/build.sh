@@ -19,6 +19,9 @@ gpgcheck=1
 gpgkey=https://repository.mullvad.net/rpm/mullvad-keyring.asc
 EOF
 
+# Enable COPR for autotiling
+dnf5 -y copr enable nstcl/autotiling
+
 # Install packages
 dnf5 install -y mullvad-vpn autotiling fastfetch tmux btop
 

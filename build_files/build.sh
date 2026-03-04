@@ -2,6 +2,12 @@
 
 set -ouex pipefail
 
+# Fix for /opt being a symlink, which breaks some RPM installations (like Mullvad)
+if [ -L /opt ]; then
+    rm -f /opt
+    mkdir /opt
+fi
+
 ### Mullvad VPN Installation
 # Create repo file directly to avoid config-manager issues
 cat <<EOF > /etc/yum.repos.d/mullvad.repo

@@ -1,6 +1,6 @@
-FROM quay.io/fedora/fedora-bootc:42
+FROM ghcr.io/ublue-os/sericea-main:stable
 
-# Define o rootfs padrão para instalação (garante que a pasta existe)
+# Define o rootfs padrão para instalação
 RUN mkdir -p /usr/lib/bootc/install/ && \
     printf '[install.filesystem.root]\ntype = "xfs"\n' \
     > /usr/lib/bootc/install/00-rootfs.toml

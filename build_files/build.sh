@@ -14,10 +14,10 @@ gpgkey=https://repository.mullvad.net/rpm/mullvad-keyring.asc
 EOF
 
 # Install the package
-dnf5 install -y mullvad-vpn
+dnf install -y mullvad-vpn
 
 ### Install other packages
-dnf5 install -y fastfetch tmux
+dnf install -y fastfetch tmux
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket

@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora-silverblue:43
+FROM quay.io/fedora/fedora-sericea:43
 
 # Define o rootfs padrão para instalação
 RUN mkdir -p /usr/lib/bootc/install/ && \

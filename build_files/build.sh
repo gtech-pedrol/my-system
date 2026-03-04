@@ -20,7 +20,7 @@ gpgkey=https://repository.mullvad.net/rpm/mullvad-keyring.asc
 EOF
 
 # Install packages
-dnf5 install -y mullvad-vpn autotiling fastfetch tmux
+dnf5 install -y mullvad-vpn autotiling fastfetch tmux btop
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket

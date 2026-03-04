@@ -9,7 +9,6 @@ if [ -L /opt ]; then
 fi
 
 ### Mullvad VPN Installation
-# Create repo file directly to avoid config-manager issues
 cat <<EOF > /etc/yum.repos.d/mullvad.repo
 [mullvad]
 name=Mullvad VPN
@@ -19,11 +18,11 @@ gpgcheck=1
 gpgkey=https://repository.mullvad.net/rpm/mullvad-keyring.asc
 EOF
 
-# Enable COPR for autotiling
-dnf5 -y copr enable nstcl/autotiling
+# Install system packages
+dnf5 install -y mullvad-vpn fastfetch tmux btop python3-pip python3-i3ipc
 
-# Install packages
-dnf5 install -y mullvad-vpn autotiling fastfetch tmux btop
+# Install autotiling via pip (since COPR doesn't have F43 yet)
+pip install --prefix=/usr autotiling
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket

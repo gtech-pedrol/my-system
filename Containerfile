@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/sericea-main:stable
+FROM ghcr.io/ublue-os/base-main:stable
 
 # Define o rootfs padrão para instalação
 RUN mkdir -p /usr/lib/bootc/install/ && \

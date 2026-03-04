@@ -3,8 +3,15 @@
 set -ouex pipefail
 
 ### Mullvad VPN Installation
-# Add the Mullvad repository server to dnf
-dnf5 config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
+# Create repo file directly to avoid config-manager issues
+cat <<EOF > /etc/yum.repos.d/mullvad.repo
+[mullvad]
+name=Mullvad VPN
+baseurl=https://repository.mullvad.net/rpm/stable/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://repository.mullvad.net/rpm/mullvad-keyring.asc
+EOF
 
 # Install the package
 dnf5 install -y mullvad-vpn

@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/base-main:latest
+FROM quay.io/fedora/fedora-bootc:42
 
 # Define o rootfs padrão para instalação
 RUN mkdir -p /usr/lib/bootc/install/ && \
